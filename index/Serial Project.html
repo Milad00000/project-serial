@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Serial</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			paddong: 0;
+			box-sizing: border-box;
+		}
+		.serial {
+			background: #EEE;
+			font-size: 22px;
+			font-weoght: bold;
+			margin: 20px auto 0;
+			padding: 20px;
+			width: 200px;
+			text-align: center;
+			font-weight: bold;
+			height: 66.5px;
+			border-radius: 4px
+		}
+		.generate {
+			display:block;
+			background: #f44336;
+			width: fit-content;
+			margin: 20px auto;
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+			user-select: none;
+			font-weight: bold;
+		
+		}
+		.generate:hover {
+			background: #e83123;
+		}
+	</style>
+</head>
+<body>
+	<div class="serial">Click Genarate</div>
+	<span class="generate">Genarate</span>
+	<script type="text/javascript">
+		let serial = document.querySelector(".serial");
+		let gen = document.querySelector(".generate");
+		
+		let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+		let num = "";
+		
+		gen.onclick = function() {
+			for (let i=0; i<=10; i++) {
+				let ran = arr[Math.floor(Math.random() * arr.length)];
+				num += ran;
+			}
+			serial.innerHTML = num;
+			num = "";
+		}
+	</script>
+</body>
+</html>
